@@ -4,5 +4,6 @@ import { RabbitMQServer } from "./rabbitmqServer";
     const rabbitMQServer = new RabbitMQServer();
     await rabbitMQServer.start();
 
-    await rabbitMQServer.publish("Teste_Menssageria", "Primeira mensagem teste");
+    const isEnv = await rabbitMQServer.publish("Teste_Menssageria", "Conexão foi um sucesso!");
+    console.log({ isEnv })
 })();
